@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.paurus.davor.demo.repository.MatchEventMapper">
+
+    <select id="findMatchEventMinMaxDateInsert" resultType="com.paurus.davor.demo.model.MatchEventMinMaxDate">
+        select
+            min(date_insert) as minDateInsert,
+            max(date_insert) as maxDateInsert
+        from match_events;
+    </select>
+
+</mapper>

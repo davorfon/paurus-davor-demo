@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.paurus.davor.demo.repository.TaxRuleMapper">
+
+    <select id="findByTraderId" resultType="com.paurus.davor.demo.model.TaxRule">
+        SELECT
+            trader_id as traderId,
+            tax_type as taxType,
+            tax_mode as taxMode,
+            value
+        FROM tax_rules
+        WHERE trader_id = #{traderId}
+        LIMIT 1;
+    </select>
+
+</mapper>
